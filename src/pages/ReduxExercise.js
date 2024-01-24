@@ -3,10 +3,9 @@ import { Container, Button, Typography, Box, Grid } from "@mui/material";
 import productOne from "../images/product1.gif";
 import productTwo from "../images/product2.gif";
 import ReactJson from "react-json-view";
-import { useDispatch } from "react-redux";
 import WrapperBox from "../components/WrapperBox";
-import { useSelector } from "react-redux";
 import { addToCart, removeCart } from "../service/cart/slice";
+import { useDispatch, useSelector } from "react-redux";
 
 const RootComponent = (props) => {
   return (
@@ -224,7 +223,7 @@ const CartProductOne = (props) => {
   // Step 2
   // Replace the line below to get data of the first product from state.cart.products
   // Change the price of products in `service/cart/slice.js` to see the effect
-  const product = useSelector((state) => state.cart.product[0]);
+  const product = useSelector((state) => state.cart.products[0]);
 
   return (
     <WrapperBox>
@@ -257,7 +256,7 @@ const CartProductTwo = (props) => {
   // Step 3
   // Replace the line below to get data of the second product from state.cart.products
   // Change the price of products in `service/cart/slice.js` to see the effect
-  const product = useSelector((state) => state.cart.product[1]);
+  const product = useSelector((state) => state.cart.products[1]);
 
   return (
     <WrapperBox>
